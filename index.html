@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#070a12"
+    >
+
+    <title>Flores amarillas para ti 💛</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         FONDO
+    ====================================================== -->
+
+    <canvas id="starsCanvas"></canvas>
+
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+
+    <div id="petalLayer"></div>
+
+
+    <!-- =====================================================
+         MÚSICA
+    ====================================================== -->
+
+    <audio
+        id="bgMusic"
+        loop
+        preload="auto"
+    >
+        <source
+            src="assets/music/Cancion.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <!-- =====================================================
+         PORTADA
+    ====================================================== -->
+
+    <section
+        id="cover"
+        class="cover"
+    >
+
+        <div class="cover-glow"></div>
+
+        <div class="cover-content">
+
+            <p class="cover-small">
+                21 · 09
+            </p>
+
+            <h1 class="cover-title">
+                Hay algo
+                <span>para ti</span>
+            </h1>
+
+            <p class="cover-description">
+                No quería que hoy recibieras solamente flores.
+            </p>
+
+            <button
+                id="startButton"
+                class="main-button"
+            >
+                <span>Abrir mi regalo</span>
+
+                <div class="button-shine"></div>
+            </button>
+
+            <p class="cover-hint">
+                úsalo con sonido ♫
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BOTÓN DE MÚSICA
+    ====================================================== -->
+
+    <button
+        id="musicButton"
+        class="music-button hidden"
+        aria-label="Música"
+    >
+        ♫
+    </button>
+
+
+    <!-- =====================================================
+         EXPERIENCIA PRINCIPAL
+    ====================================================== -->
+
+    <main id="experience">
+
+
+        <!-- HERO -->
+
+        <section
+            id="hero"
+            class="hero"
+        >
+
+            <div
+                id="flowerField"
+                class="flower-field"
+            ></div>
+
+            <div class="hero-vignette"></div>
+
+            <div class="hero-content">
+
+                <p
+                    id="heroPreTitle"
+                    class="hero-pretitle reveal"
+                >
+                    PARA UNA PERSONA MUY ESPECIAL
+                </p>
+
+                <h2
+                    id="heroTitle"
+                    class="hero-title reveal"
+                >
+                    Hoy florece
+                    <span>algo para ti.</span>
+                </h2>
+
+                <p
+                    id="heroText"
+                    class="hero-text reveal"
+                >
+                    Porque algunas personas hacen que los días normales
+                    se conviertan en recuerdos que vale la pena guardar.
+                </p>
+
+            </div>
+
+            <div class="scroll-indicator">
+
+                <span>desliza</span>
+
+                <div class="mouse">
+                    <div class="mouse-wheel"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             INTRO
+        ================================================== -->
+
+        <section class="section intro-section">
+
+            <div class="section-number">
+                01
+            </div>
+
+            <div class="intro-content">
+
+                <p class="eyebrow">
+                    FLORES AMARILLAS
+                </p>
+
+                <h2 class="section-title reveal-on-scroll">
+                    No son solamente flores.
+                </h2>
+
+                <p class="large-copy reveal-on-scroll">
+                    Son una forma de detener por un momento todo el ruido
+                    del mundo y recordar que hay personas cuya presencia
+                    hace que la vida tenga un poquito más de luz.
+                </p>
+
+                <div class="gold-line reveal-on-scroll"></div>
+
+                <p class="quote reveal-on-scroll">
+                    “Que nunca falten motivos para sonreír,
+                    recuerdos que guardar y días que valga la pena vivir.”
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTADOR
+        ================================================== -->
+
+        <section class="counter-section">
+
+            <div class="counter-background-text">
+                RECUERDOS
+            </div>
+
+            <div class="counter-card reveal-on-scroll">
+
+                <p class="eyebrow">
+                    EL TIEMPO
+                </p>
+
+                <h2>
+                    Hay cosas que el reloj
+                    <span>no sabe medir.</span>
+                </h2>
+
+                <div class="counter-grid">
+
+                    <div class="counter-item">
+                        <strong id="daysCounter">
+                            0
+                        </strong>
+
+                        <span>
+                            días
+                        </span>
+                    </div>
+
+                    <div class="counter-divider"></div>
+
+                    <div class="counter-item">
+                        <strong>
+                            ∞
+                        </strong>
+
+                        <span>
+                            recuerdos
+                        </span>
+                    </div>
+
+                    <div class="counter-divider"></div>
+
+                    <div class="counter-item">
+                        <strong>
+                            1
+                        </strong>
+
+                        <span>
+                            persona especial
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             GALERÍA
+        ================================================== -->
+
+        <section class="section memories-section">
+
+            <div class="section-number">
+                02
+            </div>
+
+            <div class="section-header">
+
+                <p class="eyebrow">
+                    PEQUEÑOS INSTANTES
+                </p>
+
+                <h2 class="section-title reveal-on-scroll">
+                    Momentos que merecen
+                    quedarse para siempre.
+                </h2>
+
+            </div>
+
+
+            <div class="memory-grid">
+
+
+                <article class="memory-card reveal-on-scroll">
+
+                    <div class="photo-frame">
+
+                        <img
+                            src="assets/photos/IMG_20240616_210849.jpg"
+                            alt="Nuestro recuerdo"
+                        >
+
+                        <div class="photo-placeholder">
+                            FOTO 01
+                        </div>
+
+                        <div class="photo-overlay"></div>
+
+                    </div>
+
+                    <div class="memory-info">
+
+                        <span>
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3 id="memoryTitle1">
+                                Un día especial
+                            </h3>
+
+                            <p id="memoryText1">
+                                Uno de esos recuerdos que siempre merece
+                                volver a mirarse.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="memory-card tall reveal-on-scroll">
+
+                    <div class="photo-frame">
+
+                        <img
+                            src="assets/photos/IMG_20240707_125821.jpg"
+                            alt="Nuestro recuerdo"
+                        >
+
+                        <div class="photo-placeholder">
+                            FOTO 02
+                        </div>
+
+                        <div class="photo-overlay"></div>
+
+                    </div>
+
+                    <div class="memory-info">
+
+                        <span>
+                            02
+                        </span>
+
+                        <div>
+
+                            <h3 id="memoryTitle2">
+                                Una sonrisa
+                            </h3>
+
+                            <p id="memoryText2">
+                                De esas que hacen que cualquier fotografía
+                                valga mucho más.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="memory-card reveal-on-scroll">
+
+                    <div class="photo-frame">
+
+                        <img
+                            src="assets/photos/IMG_20240620_212048.jpg"
+                            alt="Nuestro recuerdo"
+                        >
+
+                        <div class="photo-placeholder">
+                            FOTO 03
+                        </div>
+
+                        <div class="photo-overlay"></div>
+
+                    </div>
+
+                    <div class="memory-info">
+
+                        <span>
+                            03
+                        </span>
+
+                        <div>
+
+                            <h3 id="memoryTitle3">
+                                Una aventura
+                            </h3>
+
+                            <p id="memoryText3">
+                                No importa dónde. Importa con quién.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="memory-card reveal-on-scroll">
+
+                    <div class="photo-frame">
+
+                        <img
+                            src="assets/photos/IMG_20240620_215748.jpg"
+                            alt="Nuestro recuerdo"
+                        >
+
+                        <div class="photo-placeholder">
+                            FOTO 04
+                        </div>
+
+                        <div class="photo-overlay"></div>
+
+                    </div>
+
+                    <div class="memory-info">
+
+                        <span>
+                            04
+                        </span>
+
+                        <div>
+
+                            <h3 id="memoryTitle4">
+                                Nosotros
+                            </h3>
+
+                            <p id="memoryText4">
+                                Un momento pequeño que terminó
+                                convirtiéndose en algo enorme.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="memory-card tall reveal-on-scroll">
+
+                    <div class="photo-frame">
+
+                        <img
+                            src="assets/photos/IMG_20240630_151217.jpg"
+                            alt="Nuestro recuerdo"
+                        >
+
+                        <div class="photo-placeholder">
+                            FOTO 05
+                        </div>
+
+                        <div class="photo-overlay"></div>
+
+                    </div>
+
+                    <div class="memory-info">
+
+                        <span>
+                            05
+                        </span>
+
+                        <div>
+
+                            <h3 id="memoryTitle5">
+                                Otro capítulo
+                            </h3>
+
+                            <p id="memoryText5">
+                                Porque las mejores historias se construyen
+                                de momentos sencillos.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="memory-card reveal-on-scroll">
+
+                    <div class="photo-frame">
+
+                        <img
+                            src="assets/photos/IMG_20240706_192642.jpg"
+                            alt="Nuestro recuerdo"
+                        >
+
+                        <div class="photo-placeholder">
+                            FOTO 06
+                        </div>
+
+                        <div class="photo-overlay"></div>
+
+                    </div>
+
+                    <div class="memory-info">
+
+                        <span>
+                            06
+                        </span>
+
+                        <div>
+
+                            <h3 id="memoryTitle6">
+                                Y todavía falta mucho
+                            </h3>
+
+                            <p id="memoryText6">
+                                Esta historia todavía tiene
+                                muchas páginas por llenar.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FRASE CENTRAL
+        ================================================== -->
+
+        <section class="cinematic-quote">
+
+            <div class="cinematic-light"></div>
+
+            <div class="cinematic-content reveal-on-scroll">
+
+                <span>
+                    Y ENTRE TANTAS PERSONAS...
+                </span>
+
+                <h2>
+                    Qué bonito coincidir
+                    <br>
+                    con alguien
+                    <em>inolvidable.</em>
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RAZONES
+        ================================================== -->
+
+        <section class="section reasons-section">
+
+            <div class="section-number">
+                03
+            </div>
+
+            <div class="section-header">
+
+                <p class="eyebrow">
+                    ALGUNAS RAZONES
+                </p>
+
+                <h2 class="section-title reveal-on-scroll">
+                    Hay cosas que hacen
+                    especial a una persona.
+                </h2>
+
+            </div>
+
+            <div
+                id="reasonsGrid"
+                class="reasons-grid"
+            ></div>
+
+        </section>
+
+
+        <!-- =================================================
+             JARDÍN INTERACTIVO
+        ================================================== -->
+
+        <section
+            id="secretGarden"
+            class="secret-garden"
+        >
+
+            <div class="garden-glow"></div>
+
+            <div class="garden-header">
+
+                <p class="eyebrow">
+                    04 · UN PEQUEÑO SECRETO
+                </p>
+
+                <h2 class="section-title reveal-on-scroll">
+                    Hay siete flores escondiendo
+                    siete pequeños mensajes.
+                </h2>
+
+                <p class="garden-instruction">
+                    Toca cada flor.
+                </p>
+
+            </div>
+
+            <div
+                id="interactiveFlowers"
+                class="interactive-flowers"
+            ></div>
+
+            <div class="garden-progress">
+
+                <div
+                    id="gardenProgressBar"
+                    class="garden-progress-bar"
+                ></div>
+
+            </div>
+
+            <p id="gardenCounter">
+                0 / 7
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             CARTA
+        ================================================== -->
+
+        <section
+            id="letterSection"
+            class="letter-section"
+        >
+
+            <div class="letter-light"></div>
+
+            <div class="letter-container reveal-on-scroll">
+
+                <p class="eyebrow">
+                    UNA ÚLTIMA COSA
+                </p>
+
+                <h2 class="letter-title">
+                    Esto sí quería
+                    <span>decírtelo despacio.</span>
+                </h2>
+
+                <button
+                    id="openLetterButton"
+                    class="secondary-button"
+                >
+                    Abrir la carta
+                </button>
+
+
+                <div
+                    id="letter"
+                    class="letter"
+                >
+
+                    <div class="letter-paper">
+
+                        <div class="letter-date">
+                            21 de septiembre
+                        </div>
+
+                        <h3 id="letterGreeting">
+                            Para ti:
+                        </h3>
+
+                        <div
+                            id="typedLetter"
+                            class="typed-letter"
+                        ></div>
+
+                        <div
+                            id="letterSignature"
+                            class="letter-signature"
+                        >
+                            —
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FINAL
+        ================================================== -->
+
+        <section class="final-section">
+
+            <div
+                id="finalFlower"
+                class="final-flower"
+            ></div>
+
+            <p class="eyebrow">
+                FELIZ DÍA DE LAS FLORES AMARILLAS
+            </p>
+
+            <h2 class="final-title reveal-on-scroll">
+                Algunas flores duran unos días.
+                <span>
+                    Los buenos recuerdos duran mucho más.
+                </span>
+            </h2>
+
+            <p
+                id="finalName"
+                class="final-name"
+            ></p>
+
+            <button
+                id="finalSurpriseButton"
+                class="main-button final-button"
+            >
+                Una última sorpresa
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         MODAL DE MENSAJES DEL JARDÍN
+    ====================================================== -->
+
+    <div
+        id="messageModal"
+        class="modal"
+    >
+
+        <div class="modal-backdrop"></div>
+
+        <div class="modal-card">
+
+            <button
+                id="closeModal"
+                class="modal-close"
+            >
+                ×
+            </button>
+
+            <div class="modal-flower">
+                ✿
+            </div>
+
+            <p>
+                ESTA FLOR DICE
+            </p>
+
+            <h3 id="modalMessage"></h3>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         GRAN FINAL
+    ====================================================== -->
+
+    <div
+        id="finalOverlay"
+        class="final-overlay"
+    >
+
+        <canvas id="confettiCanvas"></canvas>
+
+        <div class="final-overlay-content">
+
+            <p>
+                UNA ÚLTIMA COSA...
+            </p>
+
+            <h2 id="finalOverlayTitle">
+                Para ti.
+            </h2>
+
+            <span class="giant-heart">
+                💛
+            </span>
+
+            <h3>
+                Gracias por existir
+                en esta pequeña parte del universo.
+            </h3>
+
+            <button
+                id="closeFinal"
+                class="secondary-button"
+            >
+                Volver
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
